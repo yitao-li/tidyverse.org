@@ -29,10 +29,9 @@ The source of the website is a collection of `.md` and `.Rmd` files stored in
   should be given name `year-month-slug.md`. Unfortunately this data isn't
   actually used when generating the output file: you'll need to set up 
   the yaml metadata. More on that below.  
-    + For `*.md` posts, no `*.html` file should be committed. If you generate one locally during development, delete it once it's no longer useful to you. Keep it out of this repo.
     
-    + For `*.Rmd` posts, an `*.html` file _should_ be committed. It will be generated when you run `blogdown::serve_site()` (see recommended workflow below).      
-    + If your post includes emoji, use the `.Rmd` format, and incorporate emoji using the [emo](https://github.com/hadley/emo) package.  
+    + For `*.Rmarkdown` posts, an `*.markdown` file _should_ be committed. It will be generated when you run `blogdown::serve_site()` (see recommended workflow below).      
+    + If your post includes emoji, use the `.Rmarkdown` format, and incorporate emoji using the [emo](https://github.com/hadley/emo) package.  
 
 * `data/events.yaml`: this yaml file contains information about upcoming 
   events. The site automatically filters out events that have happened,
@@ -57,8 +56,8 @@ blogdown::serve_site()
 ```
 
 This will open a preview of the site in your web browser, and it will 
-automatically update whenever you modify one of the input files. For `.Rmd`, 
-this will generate an `.html` file, which you should commit and push to GitHub.
+automatically update whenever you modify one of the input files. For `.Rmarkdown`, 
+this will generate an `.markdown` file, which you should commit and push to GitHub.
 
 #### Troubleshooting
 
