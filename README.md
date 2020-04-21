@@ -25,10 +25,9 @@ The source of the website is a collection of `.md` and `.Rmd` files stored in
 * `content/*.md`: these files generate the top-level pages on the site:
   packages, learn, help, and contribute. 
   
-* `content/articles/`: these files are the tidyverse blog. New blog entries
-  should be given name `year-month-slug.md`. Unfortunately this data isn't
-  actually used when generating the output file: you'll need to set up 
-  the yaml metadata. More on that below.  
+* `content/blog/`: these files are the tidyverse blog. New blog entries
+  should be given name `year-month-slug/index.Rmarkdown`. This date isn't actually used when generating the output: you'll need to set up the yaml metadata. More on that below.
+    + For `*.markdown` posts, no `*.html` file should be committed. If you generate one locally during development, delete it once it's no longer useful to you. Keep it out of this repo.
     
     + For `*.Rmarkdown` posts, an `*.markdown` file _should_ be committed. It will be generated when you run `blogdown::serve_site()` (see recommended workflow below).      
     + If your post includes emoji, use the `.Rmarkdown` format, and incorporate emoji using the [emo](https://github.com/hadley/emo) package.  
