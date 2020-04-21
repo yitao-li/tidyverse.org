@@ -22,7 +22,7 @@ The source of the website is a collection of `.md` and `.Rmd` files stored in
 [`content/`](content/), which are rendered for the site with 
 [blogdown](https://bookdown.org/yihui/blogdown). 
 
-* `content/*.md`: these files generate the top-level pages on the site:
+* `content/*/index.md`: these files generate the top-level pages on the site:
   packages, learn, help, and contribute. 
   
 * `content/blog/`: these files are the tidyverse blog. New blog entries
@@ -35,6 +35,8 @@ The source of the website is a collection of `.md` and `.Rmd` files stored in
 * `data/events.yaml`: this yaml file contains information about upcoming 
   events. The site automatically filters out events that have happened,
   sorts by date, and then shows at most two events.
+
+* 
 
 ## Previewing changes
 
