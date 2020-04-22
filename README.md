@@ -38,6 +38,8 @@ The source of the website is a collection of `.md` and `.Rmd` files stored in
 
 * 
 
+## Contributing
+
 ## Previewing changes
 
 ### Use `blogdown::serve_site()`
