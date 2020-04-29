@@ -40,6 +40,14 @@ The source of the website is a collection of `.md` and `.Rmd` files stored in
 
 ## Contributing
 
+### Metadata
+
+* **Date** is where your post gets its actual render date, as opposed to the `yyyy-mm-*` of the filename. 
+
+* **Category**  
+
+* **Tags**
+
 ## Previewing changes
 
 ### Use `blogdown::serve_site()`
