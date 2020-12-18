@@ -28,21 +28,37 @@ TODO:
 * [ ] `use_tidy_thanks()`
 -->
 
-It is with resounding joy that we announce the first release of [coro](https://github.com/r-lib/coro). coro implements coroutines for R.
+It is with cheerful merriment that we announce the first release of [coro](https://coro.r-lib.org/)! coro implements coroutines for R, a kind of functions that can suspend and resume themselves before their final `return()`. Coroutines have proved to be extremely useful in other languages for creating complex lazy sequences (with generators) and concurrency code that is easy for humans to read and write (with async functions).
 
-You can install it from CRAN with:
+You can install coro from CRAN with:
 
 ```{r, eval = FALSE}
 install.packages("coro")
 ```
 
-This blog post will ...
+This blog post will introduce the two sorts of coroutines implemented in coro, generators and coroutines. It will also demonstrate how to use these coroutines in your workflow for existing packages like reticulate and shiny.
 
 ```{r setup}
 library(coro)
 ```
 
-## Topic 1
+## Coroutines
+
+Coroutines are a special sort of functions that can suspend themselves and resume later on. There are two kinds:
+
+- Generators which produce values for complex sequences lazily (that is, on demand). These sequences may be infinite or may produce values that are too large to be held in memory all at once. 
+
+- Async functions which work together with a scheduler of concurrent functions. Async functions suspend themselves when they can't make progress until some computation has finished or some event has occurred. The scheduler gets back control and is free to launch a new concurrent computation or resume a suspended async function that is now ready to make progress.
+
+The common property of all coroutines is that they start to perform some work, decide they have done enough for now and return control to their caller who decides when to call them again to do some more work.
+
+Generators communicate intermediate values to you, the caller. Async functions exclusively communicate with a scheduler. You won't see intermediate values produced by an async function. The suspension mechanism is designed to be transparent to the user and give the illusion of sequential evaluation.
+
+A normal function can only return once:
+
+```{r}
+my_function <- function() {}
+```
 
 ## Topic 2
 
